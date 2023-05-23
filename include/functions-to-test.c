@@ -5,14 +5,14 @@
  */
 
 /*
- * sets the nth bit to 1
+ * Sets the nth bit to 1
  *  @param data:     bits to have one bit set (input/output)
  *  @param n:        bit number to be set (input)
  *
  *  @return:  non-zero on error
  */
 Err setBit(uint32_t* data, uint8_t n) {
-  if (n > 32)
+  if (n >= 32)
     return 1;
 
   *data |= (0x1 << n);
@@ -20,14 +20,14 @@ Err setBit(uint32_t* data, uint8_t n) {
 }
 
 /*
- * clears the nth bit to 0
+ * Clears the nth bit to 0
  *  @param data:     bits to have one bit cleared (input/output)
  *  @param n:        bit number to be cleared (input)
  *
  *  @return:  non-zero on error
  */
 Err clearBit(uint32_t* data, uint8_t n) {
-  if (n > 32)
+  if (n >= 32)
     return 1;
 
   *data &= ~(0x1 << n);
@@ -35,7 +35,7 @@ Err clearBit(uint32_t* data, uint8_t n) {
 }
 
 /*
- * clears the nth bit to 0
+ * Clears the nth bit to 0
  *  @param masked_bit: value of bit mask (output)
  *  @param data:       bits from which to mask one (input)
  *  @param n:          bit number to be masked (input)
@@ -43,7 +43,7 @@ Err clearBit(uint32_t* data, uint8_t n) {
  *  @return:  non-zero on error
  */
 Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n) {
-  if (n > 32)
+  if (n >= 32)
     return 1;
 
   *masked_bit = (data & (0x1 << n)) >> n;
@@ -52,7 +52,7 @@ Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n) {
 
 
 /*
- * computes the sum of an array of addends
+ * Computes the sum of an array of addends
  *  @param sum:      pass-by-reference variable through with sum is shared with the caller (output)
  *  @param addends:  pointer to array of addends (input)
  *  @param n:        number of terms in the series to sum (input)
@@ -69,7 +69,7 @@ uint8_t add(int32_t* sum, int32_t* addends, uint8_t n) {
 }
 
 /*
- * computes the sum of the product of two factor arrays
+ * Computes the sum of the product of two factor arrays
  *  @param sum:      pass-by-reference variable through with sum is shared with the caller (output)
  *  @param f1:      pointer to array of addends (input)
  *  @param f2:      pointer to array of addends (input)
@@ -84,7 +84,7 @@ uint8_t mac(int32_t* sum, int32_t* f1, int32_t* f2, uint8_t n) {
 }
 
 /*
- * shifts data n bits left
+ * Shifts data n bits left
  *  @param data:     data to be shifted left (input)
  *  @param n:        number bits shifted left (input)
  *
@@ -95,7 +95,7 @@ int32_t bitshftLeft(int32_t data, int8_t n) {
 }
 
 /*
- * shifts data n bits right
+ * Shifts data n bits right
  *  @param data:     data to be shifted right (input)
  *  @param n:        number bits shifted right (input)
  *
