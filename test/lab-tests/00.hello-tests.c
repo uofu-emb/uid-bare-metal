@@ -83,21 +83,3 @@ void testBitShftLft() {
 void testBitShftRt() {
   return;
 }
-
-int main()
-{
-  UNITY_BEGIN();
-
-  // implement the functions called by these unit tests
-  RUN_TEST(testSetBit);
-  RUN_TEST(testClearBit);
-  RUN_TEST(testMaskBit);
-
-  // implement these unit tests
-  RUN_TEST(testAdd);
-  RUN_TEST(testMac);
-  RUN_TEST(testBitShftLft);
-  RUN_TEST(testBitShftRt);
-
-  UNITY_END();
-}

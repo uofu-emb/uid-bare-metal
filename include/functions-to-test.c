@@ -50,6 +50,13 @@ Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n) {
   return 0;
 }
 
+/*
+ * inverts GPIO from 0-> 1 or 1-> 0
+ *
+ * @returns: non-zero on error
+ */
+Err invertBit(uint32_t* data, uint8_t n);
+
 
 /*
  * Computes the sum of an array of addends

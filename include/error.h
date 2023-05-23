@@ -1,0 +1,9 @@
+#ifndef __ERROR_H
+#define __ERROR_H
+
+typedef enum ERROR_CODE {
+  NO_ERROR,
+  BLASPHEMOUS_ARGUMENT,
+  NOT_IMPLEMENTED
+} ERROR_CODE;
+#endif
