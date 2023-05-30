@@ -5,50 +5,31 @@
  */
 
 /*
- * Sets the nth bit to 1
+ * Sets the bit n bit to 1
  *  @param data:     bits to have one bit set (input/output)
- *  @param n:        bit number to be set (input)
+ *  @param n:        bit n to be set (input)
  *
  *  @return:  non-zero on error
  */
-Err setBit(uint32_t* data, uint8_t n) {
-  if (n >= 32)
-    return 1;
-
-  *data |= (0x1 << n);
-  return 0;
-}
-
+Err setBit(uint32_t* data, uint8_t n);
 /*
- * Clears the nth bit to 0
+ * Clears the bit n bit to 0
  *  @param data:     bits to have one bit cleared (input/output)
- *  @param n:        bit number to be cleared (input)
+ *  @param n:        bit n to be cleared (input)
  *
  *  @return:  non-zero on error
  */
-Err clearBit(uint32_t* data, uint8_t n) {
-  if (n >= 32)
-    return 1;
-
-  *data &= ~(0x1 << n);
-  return 0;
-}
+Err clearBit(uint32_t* data, uint8_t n);
 
 /*
- * Clears the nth bit to 0
+ * Clears the bit n bit to 0
  *  @param masked_bit: value of bit mask (output)
  *  @param data:       bits from which to mask one (input)
- *  @param n:          bit number to be masked (input)
+ *  @param n:          bit n to be masked (input)
  *
  *  @return:  non-zero on error
  */
-Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n) {
-  if (n >= 32)
-    return 1;
-
-  *masked_bit = (data & (0x1 << n)) >> n;
-  return 0;
-}
+Err maskBit(uint8_t* masked_bit, uint32_t data, uint8_t n);
 
 /*
  * inverts GPIO from 0-> 1 or 1-> 0
@@ -66,14 +47,7 @@ Err invertBit(uint32_t* data, uint8_t n);
  *
  *  @return:  @return non-zero on error, else 0
  */
-uint8_t add(int32_t* sum, int32_t* addends, uint8_t n) {
-  uint64_t tmpSum = 0;
-  while(n--)
-    tmpSum += *(addends++);
-  
-  (*sum) = tmpSum;
-  return ((*sum)!=tmpSum);
-}
+uint8_t add(int32_t* sum, int32_t* addends, uint8_t n);
 
 /*
  * Computes the sum of the product of two factor arrays
@@ -84,11 +58,7 @@ uint8_t add(int32_t* sum, int32_t* addends, uint8_t n) {
  *
  *  @return:  @return non-zero on error, else 0
  */
-uint8_t mac(int32_t* sum, int32_t* f1, int32_t* f2, uint8_t n) {
-  while(n--)
-    (*sum) += *(f1++) * *(f2++);
-  return 0;
-}
+uint8_t mac(int32_t* sum, int32_t* f1, int32_t* f2, uint8_t n);
 
 /*
  * Shifts data n bits left
@@ -97,9 +67,7 @@ uint8_t mac(int32_t* sum, int32_t* f1, int32_t* f2, uint8_t n) {
  *
  *  @return:  data shifted n bits left
  */
-int32_t bitshftLeft(int32_t data, int8_t n) {
-  return data << n;
-}
+int32_t bitshftLeft(int32_t data, int8_t n);
 
 /*
  * Shifts data n bits right
@@ -108,6 +76,4 @@ int32_t bitshftLeft(int32_t data, int8_t n) {
  *
  *  @return:  data shifted n bits right
  */
-int32_t bitshftRight(int32_t data, int8_t n) {
-  return data >> n;
-}
+int32_t bitshftRight(int32_t data, int8_t n);

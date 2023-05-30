@@ -8,6 +8,7 @@ int main()
   // implement the functions called by these unit tests
   RUN_TEST(testSetBit);
   RUN_TEST(testClearBit);
+  RUN_TEST(testInvertBit);
   RUN_TEST(testMaskBit);
 
   // implement these unit tests
@@ -17,10 +18,6 @@ int main()
   RUN_TEST(testBitShftRt);
 
   RUN_TEST(startGPIO_test);
-
-  RUN_TEST(setGPIO_test);
-  RUN_TEST(clearGPIO_test);
-  RUN_TEST(invertGPIO_test);
 
   UNITY_END();
 }
